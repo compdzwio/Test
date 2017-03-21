@@ -1,0 +1,23 @@
+(in-package :stumpwm)
+
+;;(set-font "-wenquanyi-wenquanyi bitmap song-medium-r-normal--0-0-75-75-p-0-iso10646-1")
+(set-font "-wenquanyi-wenquanyi bitmap song-medium-r-normal--16-160-75-75-p-80-iso10646-1")
+;;(set-font "-misc-simsun-medium-r-normal--0-0-0-0-p-0-iso10646-1")
+
+(setf *startup-message* "^2*Welcome to The ^BStump^b ^BW^bindow ^BM^banager!")
+;;(setf *mouse-focus-policy* :click)
+
+(defvar *startup-mode-line* t)
+
+(set-prefix-key (kbd "C-,"))
+(define-key *root-map* (kbd "b") "exec firefox")
+
+(setf *screen-mode-line-format*
+  (list
+    '(:eval (run-shell-command
+    "LANG=c; date '+%m/%d(%a) %H:%M'|tr -d [:cntrl:]" t))
+    " | %g"))
+
+(when (and *startup-mode-line*
+  (not (head-mode-line (current-head))))
+  (mode-line))

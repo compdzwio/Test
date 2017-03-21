@@ -1,0 +1,7 @@
+PATH=$PATH:~/.composer/vendor/bin
+export PATH
+# JAVA_HOME=/usr/local/linux-oracle-jdk1.8.0
+JAVA_HOME=/usr/local/linux-sun-jdk1.7.0
+export JAVA_HOME
+ANDROID_HOME=/usr/local/android-sdk-linux
+export ANDROID_HOME
