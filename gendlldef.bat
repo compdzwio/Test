@@ -19,6 +19,6 @@ if exist c:\windows\system32\%1.dll (
   )
   echo complete
 ) else (
-  echo dll exists!
+  echo system dll not exists!
 )
 @echo on
